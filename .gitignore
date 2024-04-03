@@ -1,0 +1,6 @@
+/mlruns/
+/data/
+/mlartifacts/
+/plots/
+/model/
+/checkpoints/ 

@@ -1,0 +1,20 @@
+{
+    "cSpell.words": [
+        "Albumentations",
+        "DGFAS",
+        "HTER",
+        "imwrite",
+        "logit",
+        "mlflow",
+        "onnxruntime",
+        "optim",
+        "SCRFD",
+        "sess",
+        "softmax",
+        "torchvision",
+        "tqdm"
+    ],
+    "python.analysis.extraPaths": [
+        "./main"
+    ]
+}
