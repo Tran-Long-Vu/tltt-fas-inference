@@ -73,6 +73,9 @@ Saved checkpoints are in directory: /checkpoints/fas-best.ptl
 
 Training metrics are recorded at: http://127.0.0.1:8080
 
+To train from checkpoint change TRAIN_FROM_CHECKPOINT in configs.py to True.
+
+
 ## Testing with hand crawled data:
 
 ### Data directory: 
