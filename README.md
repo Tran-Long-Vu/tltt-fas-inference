@@ -97,9 +97,10 @@ To train from checkpoint change TRAIN_FROM_CHECKPOINT in configs.py to True.
 
 python test.py
 
-- default test is printing attack.
-- change to replay attack in test.py
-- test script is for default .onnx model.
+- Default test is printing attack.
+- Test script is for .onnx model.
+- Available test types: 'printing', 'replay', 'live'.
+- Change INFERENCE_TYPE in configs.py to the correct type to test.
 - To test checkpoint change TEST_FROM_CHECKPOINT in configs.py to True.
 
 # Additional work to be added:

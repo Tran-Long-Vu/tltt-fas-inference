@@ -248,7 +248,10 @@ class FasSolution():
                             final_preds.append(final_pred)
                             print('        final predict:      ' +  str(final_pred) + "\n")
                     image_name = f'image_{frame_count}.png'
-                    path_to_save_img = (self.path_to_save_frames + image_name)
+                    if not os.path.exists("frames/"):
+                        os.makedirs("frames/")
+                    path_to_save_img = ('frames/' + image_name)
+                    
                     cv2.imwrite(path_to_save_img, face)
                     img_paths.append(path_to_save_img)
                     ground_truth = int(os.path.basename(os.path.dirname(path_to_test_video)))
@@ -291,7 +294,7 @@ class FasSolution():
          })
         print(df)
         filename = 'real_video_benchmark.csv'
-        df.to_csv(filename, index=False)
+        df.to_csv('results/' +  filename, index=False)
         pass
    
     # run on replay attack
@@ -404,9 +407,11 @@ if __name__ == '__main__':
     # error in imagre dataset code
     
     fas_solution = FasSolution()
-    fas_solution.run_on_image_dataset()
-    # fas_solution.run_on_video_dataset()
-    # Change source path to run single video.
-    # fas_solution.run_on_video_file("./data/video_benchmark/0/real.mp4")
-    
+    # configs: inference type: 'printing', 'replay', 'live'
+    if INFERENCE_TYPE == 'printing':
+        fas_solution.run_on_image_dataset()
+    elif INFERENCE_TYPE == 'replay':
+        fas_solution.run_on_video_dataset()
+    elif INFERENCE_TYPE == 'live':
+        fas_solution.run_on_video_file(PATH_TO_SINGLE_VIDEO)
     pass
