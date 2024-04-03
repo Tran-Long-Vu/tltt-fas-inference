@@ -1,5 +1,5 @@
 # Project: VHT-facial-anti-spoof
-# Training Facial Anti Spoof model on CVPR23 dataset.
+
 
 ## Congifuration Environment
 
@@ -10,11 +10,11 @@
 
 Run: "pip install -r requirements.txt"
 
-## Pre-training
+## Before test
 
 Its best to have the folders /model and /data ready before cloning the repository.
 
-For mock training & models. Download models & training data on: https://drive.google.com/drive/folders/1BSyfksbBj5dvB_0Q6e5pJiwyCjx_z68p?usp=drive_link
+For mock data & models. Download models & data on: https://drive.google.com/drive/folders/1BSyfksbBj5dvB_0Q6e5pJiwyCjx_z68p?usp=drive_link
 
 Git clone the repository.
 
