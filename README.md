@@ -22,6 +22,8 @@ For mock training & models. Download models & training data on: https://drive.go
 
 ## Training Data Directory:
 
+First create directory: /data/datasets/
+
 - data
     - datasets
         - CVPR23
@@ -37,6 +39,9 @@ For mock training & models. Download models & training data on: https://drive.go
                             - imagename.txt
 
 ### Model Directory:
+
+First create directory: /model/
+
 - model
   - scrfd.onnx
   - rn18-fas.onnx

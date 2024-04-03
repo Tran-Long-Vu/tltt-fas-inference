@@ -17,7 +17,7 @@ class FasTrainer():
         self.attack_type = ATTACK_TYPE
         self.model = self.load_model()
         self.optimizer = torch.optim.Adam(
-            self.model.parameters(), lr = 1e-5, # 0.0001
+                        self.model.parameters(), lr = 1e-5, # 0.0001
         )
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.save_ckp_dir = PATH_TO_SAVE_CHECKPOINT
@@ -61,9 +61,12 @@ class FasTrainer():
         from DGFAS import DG_model
         model = DG_model("resnet18")
         if TRAIN_FROM_CHECKPOINT == True:
-            model.load_state_dict(torch.load(PATH_TO_CHECKPOINT_MODEL))
+            # if checkpoint
+            model.load_state_dict(torch.load(PATH_TO_CHECKPOINT_MODEL)) #error
             print("    loaded checkpoint  " )
-        return model
+            return model
+        else:
+            return model        
     
     # run printing attack dataset
     def train_printing_attack(self,
@@ -242,8 +245,10 @@ class FasTrainer():
                                             
                 mlflow.log_metric("train_hter", train_HTER, step=epoch)
                 mlflow.log_metric("val_hter", val_HTER, step=epoch) 
-                
+                # save checkpoint
                 if val_accuracy > best_accuracy:
+                    if not os.path.exists("checkpoints/"):
+                        os.makedirs("checkpoints/")
                     torch.save(model.state_dict(), "{}/fas-best.pth".format(save_ckp_dir))
                     best_accuracy = val_accuracy
 

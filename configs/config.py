@@ -16,7 +16,7 @@ TRAIN_DATASET = 'CVPR23'
 VAL_DATASET = 'CVPR23'
 TEST_DATASET = 'HAND_CRAWL'
 
-TRAIN_FROM_CHECKPOINT = True
+TRAIN_FROM_CHECKPOINT = False
 TEST_FROM_CHECKPOINT = False
 PATH_TO_CHECKPOINT_MODEL = 'checkpoints/fas-best.pth'
 
@@ -28,8 +28,8 @@ PATH_TO_PRINTING_DATASET = 'data/datasets/CVPR23/train/'
 
 PATH_TO_TRAIN_DATASET = 'data/datasets/CVPR23/train/'
 
-PATH_TO_PRINTING_TEST_DATASET = 'data/datasets/Hand-crawl/images/'
-PATH_TO_REPLAY_TEST_DATA = 'data/datasets/Hand-crawl/videos/'
+PATH_TO_PRINTING_TEST_DATASET = 'data/datasets/Hand_crawl/images/'
+PATH_TO_REPLAY_TEST_DATA = 'data/datasets/Hand_crawl/videos/'
 
 PATH_TO_STATE_DICT = 'model/rn18-fas-ckp.pth'
 PATH_TO_SAVE_CHECKPOINT = 'checkpoints/'
