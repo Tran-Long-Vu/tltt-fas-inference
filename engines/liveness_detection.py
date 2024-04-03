@@ -9,14 +9,23 @@ class LivenessDetection():
         self.path_to_fas_model = PATH_TO_FAS_MODEL
         self.model_format = "onnx"
         self.model = self.load_model()
-
+        self.path_checkpoint = PATH_TO_CHECKPOINT_ONNX
     # load onnx model  
     def load_model(self):
         if self.model_format == 'onnx':
-            import onnxruntime
-            onnx_model = onnxruntime.InferenceSession(self.path_to_fas_model)
-            print( 'Loaded:' + str(onnx_model._model_path))
-            return onnx_model
+            if TEST_FROM_CHECKPOINT == True: 
+                import onnxruntime
+                onnx_model = onnxruntime.InferenceSession(PATH_TO_CHECKPOINT_ONNX) # path to check
+                print( 'Loaded:' + str(PATH_TO_CHECKPOINT_ONNX))
+                return onnx_model
+            else:
+                import onnxruntime
+                onnx_model = onnxruntime.InferenceSession(self.path_to_fas_model)
+                print( 'Loaded:' + str(onnx_model._model_path))
+                return onnx_model
+
+            
+        
         if self.model_format == 'pth': 
             import torch
             pth_model = torch.load(self.path_to_fas_model)

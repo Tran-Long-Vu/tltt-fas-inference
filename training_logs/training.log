@@ -2117,3 +2117,381 @@ INFO:root:val_FAR: 0.0008319467554076539
 INFO:root:val_FRR: 0.999756216479766
 INFO:root:val_HTER: 0.5002940816175868
 INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 48.010000000000005
+INFO:root:train_TN: 2.01
+INFO:root:train_FP: 14.01
+INFO:root:train_FN: 9.01
+INFO:root:train_FAR: 0.8745318352059925
+INFO:root:train_FRR: 0.15801473167309715
+INFO:root:train_HTER: 0.5162732834395448
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:train_TP: 51.010000000000005
+INFO:root:train_TN: 1.01
+INFO:root:train_FP: 15.01
+INFO:root:train_FN: 6.01
+INFO:root:train_FAR: 0.9369538077403246
+INFO:root:train_FRR: 0.10540161346895825
+INFO:root:train_HTER: 0.5211777106046414
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 4.01
+INFO:root:train_TN: 14.01
+INFO:root:train_FP: 1.01
+INFO:root:train_FN: 50.010000000000005
+INFO:root:train_FAR: 0.06724367509986684
+INFO:root:train_FRR: 0.9257682339874121
+INFO:root:train_HTER: 0.4965059545436395
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 0.01
+INFO:root:val_TN: 16.009999999999998
+INFO:root:val_FP: 0.01
+INFO:root:val_FN: 57.010000000000005
+INFO:root:val_FAR: 0.0006242197253433209
+INFO:root:val_FRR: 0.9998246229393196
+INFO:root:val_HTER: 0.5002244213323315
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 46.010000000000005
+INFO:root:train_TN: 2.01
+INFO:root:train_FP: 12.01
+INFO:root:train_FN: 9.01
+INFO:root:train_FAR: 0.8566333808844508
+INFO:root:train_FRR: 0.16375863322428208
+INFO:root:train_HTER: 0.5101960070543665
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 15.01
+INFO:root:train_TN: 1.01
+INFO:root:train_FP: 2.01
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.6655629139072848
+INFO:root:train_FRR: 0.0006657789613848203
+INFO:root:train_HTER: 0.33311434643433485
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 0.01
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 0.01
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.5
+INFO:root:val_FRR: 0.5
+INFO:root:val_HTER: 0.5
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:train_TP: 45.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 13.01
+INFO:root:train_FN: 2.01
+INFO:root:train_FAR: 0.999231950844854
+INFO:root:train_FRR: 0.042747766907698846
+INFO:root:train_HTER: 0.5209898588762765
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:val_TP: 0.01
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 0.01
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.5
+INFO:root:val_FRR: 0.5
+INFO:root:val_HTER: 0.5
+INFO:root:--------------
+INFO:root:epoch: 3
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 3
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 14.01
+INFO:root:train_TN: 5.01
+INFO:root:train_FP: 3.01
+INFO:root:train_FN: 10.01
+INFO:root:train_FAR: 0.37531172069825436
+INFO:root:train_FRR: 0.4167360532889259
+INFO:root:train_HTER: 0.39602388699359015
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 0.01
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 0.01
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.5
+INFO:root:val_FRR: 0.5
+INFO:root:val_HTER: 0.5
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:train_TP: 43.01
+INFO:root:train_TN: 4.01
+INFO:root:train_FP: 7.01
+INFO:root:train_FN: 3.01
+INFO:root:train_FAR: 0.6361161524500908
+INFO:root:train_FRR: 0.06540634506736202
+INFO:root:train_HTER: 0.3507612487587264
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 3
+INFO:root:train_TP: 54.010000000000005
+INFO:root:train_TN: 1.01
+INFO:root:train_FP: 14.01
+INFO:root:train_FN: 3.01
+INFO:root:train_FAR: 0.9327563249001332
+INFO:root:train_FRR: 0.05278849526481935
+INFO:root:train_HTER: 0.49277241008247624
+INFO:root:--------------
+INFO:root:epoch: 3
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 4
+INFO:root:train_TP: 56.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 1.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.017713083128726763
+INFO:root:train_HTER: 0.5085444317016916
+INFO:root:--------------
+INFO:root:epoch: 4
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 5
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 5
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 6
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 6
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 7
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 7
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 8
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 8
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 9
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 9
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 10
+INFO:root:train_TP: 57.010000000000005
+INFO:root:train_TN: 0.01
+INFO:root:train_FP: 16.009999999999998
+INFO:root:train_FN: 0.01
+INFO:root:train_FAR: 0.9993757802746566
+INFO:root:train_FRR: 0.00017537706068046299
+INFO:root:train_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 10
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 21.009999999999998
+INFO:root:train_TN: 5.01
+INFO:root:train_FP: 9.01
+INFO:root:train_FN: 25.009999999999998
+INFO:root:train_FAR: 0.6426533523537803
+INFO:root:train_FRR: 0.5434593654932638
+INFO:root:train_HTER: 0.593056358923522
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 5.01
+INFO:root:val_TN: 15.01
+INFO:root:val_FP: 1.01
+INFO:root:val_FN: 52.010000000000005
+INFO:root:val_FAR: 0.06304619225967541
+INFO:root:val_FRR: 0.9121360925990881
+INFO:root:val_HTER: 0.4875911424293818
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:train_TP: 50.010000000000005
+INFO:root:train_TN: 3.01
+INFO:root:train_FP: 13.01
+INFO:root:train_FN: 7.01
+INFO:root:train_FAR: 0.8121098626716604
+INFO:root:train_FRR: 0.12293931953700454
+INFO:root:train_HTER: 0.4675245911043325
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:train_TP: 31.009999999999998
+INFO:root:train_TN: 6.01
+INFO:root:train_FP: 6.01
+INFO:root:train_FN: 14.01
+INFO:root:train_FAR: 0.5
+INFO:root:train_FRR: 0.3111950244335851
+INFO:root:train_HTER: 0.4055975122167925
+INFO:root:--------------
+INFO:root:epoch: 1
+INFO:root:val_TP: 33.01
+INFO:root:val_TN: 8.01
+INFO:root:val_FP: 8.01
+INFO:root:val_FN: 24.009999999999998
+INFO:root:val_FAR: 0.5
+INFO:root:val_FRR: 0.42108032269379164
+INFO:root:val_HTER: 0.4605401613468958
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:train_TP: 47.010000000000005
+INFO:root:train_TN: 7.01
+INFO:root:train_FP: 9.01
+INFO:root:train_FN: 10.01
+INFO:root:train_FAR: 0.5624219725343321
+INFO:root:train_FRR: 0.17555243774114346
+INFO:root:train_HTER: 0.3689872051377378
+INFO:root:--------------
+INFO:root:epoch: 2
+INFO:root:val_TP: 57.010000000000005
+INFO:root:val_TN: 0.01
+INFO:root:val_FP: 16.009999999999998
+INFO:root:val_FN: 0.01
+INFO:root:val_FAR: 0.9993757802746566
+INFO:root:val_FRR: 0.00017537706068046299
+INFO:root:val_HTER: 0.49977557866766853
+INFO:root:--------------

@@ -257,7 +257,7 @@ class DG_model(nn.Module):
         self.classifier = Classifier()
 
     def forward(self, input, norm_flag=True):
-        feature = self.backbone(input)
+        feature = self.backbone(input) # fwd
         feature = self.embedder(feature, norm_flag = True)
         classifier_out = self.classifier(feature, norm_flag = True)
         return classifier_out, feature

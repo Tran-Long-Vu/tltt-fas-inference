@@ -53,7 +53,6 @@ class FasSolution():
             self.fd = FaceDetector()
             self.fd.fas_model_backbone = "rn18"
             
-            
         else:
             print ("incorrect model")
         pass

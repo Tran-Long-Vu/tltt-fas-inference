@@ -12,7 +12,10 @@ Run: "pip install -r requirements.txt"
 
 ## Pre-training
 
-Git clone the repository.
+
+
+
+Its best to have the folders /model and /data ready before cloning the repository.
 
 Download the CVPR23 Dataset.
 Save samples in directory: $root/data/datasets/CVPR23/train/
@@ -20,9 +23,13 @@ The dataset is split into 80% training and 20% validation.
 
 For mock training & models. Download models & training data on: https://drive.google.com/drive/folders/1BSyfksbBj5dvB_0Q6e5pJiwyCjx_z68p?usp=drive_link
 
+Git clone the repository.
+
+Put the /data and /model folders in the correct order in the repository. Then cd to the repo.
+
 ## Training Data Directory:
 
-First create directory: /data/datasets/
+Data directory: 
 
 - data
     - datasets
@@ -40,8 +47,6 @@ First create directory: /data/datasets/
 
 ### Model Directory:
 
-First create directory: /model/
-
 - model
   - scrfd.onnx
   - rn18-fas.onnx
@@ -54,7 +59,7 @@ First create directory: /model/
 
 ## Training
 
-Move to the folder $root of the repository, in separate terminal, run:
+Cd to the folder $root of the repository, in separate terminal, run:
 
 - mlflow server --host 127.0.0.1 --port 8080
 
@@ -89,7 +94,10 @@ Training metrics are recorded at: http://127.0.0.1:8080
 
 python test.py
 
+- default test is printing attack.
+- change to replay attack in test.py
+- test script is for default .onnx model.
+- To test checkpoint change TEST_FROM_CHECKPOINT in configs.py to True.
+
 # Additional work to be added:
-- Training script from .pth checkpoint.
-- Converting .pth checkpoint to onnx format.
-- Test script based on training checkpoint.
+- log metrics on pyplot sklearn

@@ -6,8 +6,8 @@ albumentations
 tqdm
 scikit-learn
 pandas
-onnxruntime
 mlflow
 matplotlib
 mlflow
 onnxruntime
+onnx

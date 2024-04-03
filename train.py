@@ -3,9 +3,8 @@ from libs import *
 from engines.scrfd import SCRFD
 from data_script.image_dataset import ImageDataset
 from configs.config import *
-import sklearn.metrics as metrics
-import pandas as pd
 import mlflow
+
 
 # todo - configs file
 mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
@@ -250,190 +249,15 @@ class FasTrainer():
                     if not os.path.exists("checkpoints/"):
                         os.makedirs("checkpoints/")
                     torch.save(model.state_dict(), "{}/fas-best.pth".format(save_ckp_dir))
+                    
+                    # to onnx.
+                    dummy_input = torch.randn(1, 3, 256, 256).to(device)
+                    torch.onnx.export(model, dummy_input, "./checkpoints/fas-best.onnx")
+                    print("onnx checkpoint saved.")
                     best_accuracy = val_accuracy
-
-            #todo - log this in the loop.
             
-            
-                
-                
-                
         print("\nFinish Training ...\n" + " = "*16)
-            
 
-        # # Create the MLflow UI chart for train accuracy per epoch
-        # train_accuracy_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y="train_accuracy",
-        #     title="Train Accuracy per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Accuracy"
-        # )
-
-        # # Create the MLflow UI chart for val accuracy per epoch
-        # val_accuracy_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y="val_accuracy",
-        #     title="Val Accuracy per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Accuracy"
-        # )
-
-        # # Create the MLflow UI chart for train loss per epoch
-        # train_loss_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y="train_loss",
-        #     title="Train Loss per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Loss"
-        # )
-
-        # # Create the MLflow UI chart for val loss per epoch
-        # val_loss_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y="val_loss",
-        #     title="Val Loss per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Loss"
-        # )
-
-        # # Create the MLflow UI chart for train FAR and FRR per epoch
-        # train_far_frr_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y=["train_far", "train_frr"],
-        #     title="Train FAR and FRR per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Rate"
-        # )
-
-        # # Create the MLflow UI chart for val FAR and FRR per epoch
-        # val_far_frr_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y=["val_far", "val_frr"],
-        #     title="Val FAR and FRR per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Rate"
-        # )
-
-        # # Create the MLflow UI chart for train HTER per epoch
-        # train_hter_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y="train_hter",
-        #     title="Train HTER per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Rate"
-        # )
-
-        # # Create the MLflow UI chart for val HTER per epoch
-        # val_hter_chart = mlflow.search_runs(run_id, order_by=["epoch"]).plot(
-        #     kind="line",
-        #     x="epoch",
-        #     y="val_hter",
-        #     title="Val HTER per Epoch",
-        #     xlabel="Epoch",
-        #     ylabel="Rate"
-        # )
-
-        # # Display the charts in the MLflow UI
-        # mlflow.display(train_accuracy_chart)
-        # mlflow.display(val_accuracy_chart)
-        # mlflow.display(train_loss_chart)
-        # mlflow.display(val_loss_chart)
-        # mlflow.display(train_far_frr_chart)
-        # mlflow.display(val_far_frr_chart)
-        # mlflow.display(train_hter_chart)
-        # mlflow.display(val_hter_chart)  
-             
-        # Plot accuracy over epoch
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, train_accuracies, label='Accuracy')
-        plt.xlabel('Epoch')
-        plt.ylabel('Accuracy')
-        plt.title('Train Accuracy over Epochs')
-        plt.legend()
-        plt.savefig("./plots/train_accuracy_plot.png")
-        plt.close()
-
-        # Plot accuracy over epoch
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, val_accuracies, label='Accuracy')
-        plt.xlabel('Epoch')
-        plt.ylabel('Accuracy')
-        plt.title('Val Accuracy over Epochs')
-        plt.legend()
-        plt.savefig("./plots/val_accuracy_plot.png")
-        plt.close()
-        
-        # Plot accuracy over epoch
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, val_losses, label='Loss')
-        plt.xlabel('Epoch')
-        plt.ylabel('Loss')
-        plt.title('Train Loss over Epochs')
-        plt.legend()
-        plt.savefig("./plots/train_loss_plot.png")
-        plt.close()
-
-        # Plot accuracy over epoch
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, val_losses, label='Loss')
-        plt.xlabel('Epoch')
-        plt.ylabel('Loss')
-        plt.title('Val Loss over Epochs')
-        plt.legend()
-        plt.savefig("./plots/val_loss.png")
-        plt.close()
-        
-        # Plot FAR and FRR over epoch and save
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, train_fars, label='FAR')
-        plt.plot(epoches, train_frrs, label='FRR')
-        plt.xlabel('Epoch')
-        plt.ylabel('Rate')
-        plt.title('Train FAR and FRR over Epochs')
-        plt.legend()
-        plt.savefig("./plots/train_far_frr_plot.png")
-        plt.close()
-        
-                # Plot FAR and FRR over epoch and save
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, val_fars, label='FAR')
-        plt.plot(epoches, val_frrs, label='FRR')
-        plt.xlabel('Epoch')
-        plt.ylabel('Rate')
-        plt.title('VAL FAR and FRR over Epochs')
-        plt.legend()
-        plt.savefig("./plots/val_far_frr_plot.png")
-        plt.close()
-        
-        # Plot HTER over epoch
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, train_hters, label='HTER')
-        plt.xlabel('Epoch')
-        plt.ylabel('HTER')
-        plt.title('Train HTER over Epochs')
-        plt.legend()
-        plt.savefig("./plots/train_hter.png")
-        plt.close()
-        
-        # Plot HTER over epoch
-        plt.figure(figsize=(8, 6))
-        plt.plot(epoches, val_hters, label='HTER')
-        plt.xlabel('Epoch')
-        plt.ylabel('HTER')
-        plt.title('Val HTER over Epochs')
-        plt.legend()
-        plt.savefig("./plots/val_hter.png")
-        plt.close()
-        
-        
         return {
             "train_loss":train_loss, "train_accuracy":train_accuracy, 
             "val_loss":val_loss, "val_accuracy":val_accuracy, 
