@@ -5,3 +5,4 @@
 /model/
 /checkpoints/ 
 /frames/
+/__pycache__/

@@ -1,8 +1,13 @@
-from libs import *
-from engines.scrfd import SCRFD
-from data_script.image_dataset import ImageDataset
-from engines.liveness_detection import LivenessDetection
+from libs.libs import *
 from configs.config import *
+
+
+from src.scrfd import *
+from src.image_dataset import ImageDataset
+from src.liveness_detection import LivenessDetection
+from configs.config import *
+
+
 class FaceDetector():
     def __init__(self) -> None:
         # self.data = self.load_data()
@@ -17,12 +22,14 @@ class FaceDetector():
         # self.dataset = self.load_dataset()
         pass
     
-    # load onnxruntime
     def load_model(self):
         if self.model_name == "scrfd":
             scrfd = SCRFD(model_file=self.path_to_fd_model)
-            print("loaded: " + str(self.path_to_fd_model))
             scrfd.prepare(-1)
+            print("    loaded: " + 
+                  str(self.path_to_fd_model) +
+                  " into " + 
+                  str(scrfd.session.get_providers()[0]))
             return scrfd
         else:
             return 0
@@ -31,7 +38,7 @@ class FaceDetector():
     def face_detect_image_dir(self,image): 
             if image is not None: 
                 fd = self.model
-                bboxes, kpss = fd.detect(image,0.5)
+                bboxes, kpss = fd.detect(image,0.5) # confidence threshold = 0.5
                 return bboxes 
             else:
                 print("no image.")
@@ -52,17 +59,21 @@ class FaceDetector():
     # format for FAS inference
     def format_cropped_images_dir(self, cropped_faces):
         # TODO: array of faces found in one image.
-        if len(cropped_faces) != 0:
-            face = cropped_faces[0]  # first face
+        if len(cropped_faces) == 0: # check null
+            pass
+        for face in cropped_faces:
+            face = cropped_faces[0]  # first face (test dataset has one face only.)
             face = np.expand_dims(face,0)
             if self.fas_model_backbone == "mnv3":
+                # if CUDA: torch resize
                 face = np.resize(face, (1,3,128,128))
             elif self.fas_model_backbone == "rn18":
+                # if CUDA: torch resize
+                
                 face = np.resize(face, (1,3,256,256))
             face = np.array(face).astype(np.float32)
             return face
-        else:
-            pass
+        
 
     # inference on single frame of video
     def run_and_record_frame_video(self, frame):
@@ -83,13 +94,17 @@ class FaceDetector():
             face = np.expand_dims(face,0)
             if self.fas_model_backbone == "mnv3":
                 face = np.resize(face, (1,3,128,128))
+                if INFERENCE_DEVICE == "CUDA":
+                    face = torch.Tensor.resize(face, (1,3,128,128))
             elif self.fas_model_backbone == "rn18":
                 face = np.resize(face, (1,3,256,256))
+                if INFERENCE_DEVICE == "CUDA":
+                    face = torch.Tensor.resize(face, (1,3,128,128))
             face = np.array(face).astype(np.float32)
             return face, width, height
     
-    # inference on single image of dataset            
-    def run_on_img_dir(self, image,):
+    # inference on single image             
+    def detect_one_face(self, image,):
         
         if image is not None:
             bboxes = self.face_detect_image_dir(image)
@@ -103,6 +118,8 @@ class FaceDetector():
         else:
             print("no image")
             return []
+    # !todo: fd inference on realtime video(detect many faces.)
+    # !!todo: fas inference on realtime video (classify many faces in 1 frame.)
 
 
 if __name__ == '__main__':

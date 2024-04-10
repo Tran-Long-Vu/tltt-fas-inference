@@ -9,7 +9,9 @@ OPTIMIZER = "adam"
 MODEL_BACKBONE= "rn18"
 MODEL_NAME = 'rn18fas'
 ATTACK_TYPE = 'printing'
-INFERENCE_DEVICE = 'CUDA'
+
+INFERENCE_DEVICE = 'CPU'
+
 TRAINING_DEVICE = 'CUDA'
 
 INFERENCE_TYPE = 'printing'
@@ -27,9 +29,9 @@ PATH_TO_IMAGES = ''
 PATH_TO_VIDEOS = ''
 PATH_TO_SINGLE_VIDEO = './data/video_benchmark/0/real.mp4'
 
-PATH_TO_PRINTING_DATASET = 'data/datasets/CVPR23/train/'
+PATH_TO_PRINTING_DATASET = 'data/datasets/CVPR23/Train/'
 
-PATH_TO_TRAIN_DATASET = 'data/datasets/CVPR23/train/'
+PATH_TO_TRAIN_DATASET = 'data/datasets/CVPR23/Train/'
 
 PATH_TO_PRINTING_TEST_DATASET = 'data/datasets/Hand_crawl/images/'
 PATH_TO_REPLAY_TEST_DATA = 'data/datasets/Hand_crawl/videos/'

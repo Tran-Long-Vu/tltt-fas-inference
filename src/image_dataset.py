@@ -1,7 +1,7 @@
 import __main__
 from configs.config import *
 # import
-from libs import *
+from libs.libs import *
 
 import torch
 class ImageDataset(torch.utils.data.Dataset):
@@ -46,20 +46,19 @@ class ImageDataset(torch.utils.data.Dataset):
         if augment == 'train':
             self.transform = tf.Compose([
                             tf.ToTensor(),
-                            tf.Resize((256, 256)),
+                            #tf.Resize((256, 256)),
                             tf.RandomHorizontalFlip(),
                             tf.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
                             tf.ColorJitter(brightness=0.2, contrast=0.2),
                             tf.RandomRotation(30),
                         ])
-        elif augment == 'val':
+        elif augment == 'val' or INFERENCE_DEVICE == "CUDA":
             self.transform = tf.Compose([
                                 tf.ToTensor(),
                                 tf.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-                                tf.Resize((256, 256)),
+                                #tf.Resize((256, 256)),
                             ])
-                            
-    #length
+     #length
     def __len__(self, 
     ):
         return len(self.all_image_paths)
@@ -101,15 +100,13 @@ class ImageDataset(torch.utils.data.Dataset):
             t_label = torch.tensor(label)
             t_image = self.transform(cropped_image)
             return t_image, t_label        
+        
         elif self.augment == 'val':
             image_path = self.all_image_paths[index]
             face_path = self.all_face_paths[index]
             
             image = cv2.imread(image_path)
             label = self.get_label(image_path)
-
-            image_path_without_extension = os.path.splitext(image_path)[0]
-            face_path_without_extension = os.path.splitext(face_path)[0]
             
             t_image = self.transform(image)
             t_label = torch.tensor(label)
@@ -117,9 +114,16 @@ class ImageDataset(torch.utils.data.Dataset):
 
         elif self.augment == 'test':
             image_path = self.all_image_paths[index] # all image paths
+            
             image = cv2.imread(image_path)
+            image = np.array(image)
             label = self.get_label(image_path)
-            return image, label
+            if INFERENCE_DEVICE == "CUDA":
+                t_image = self.transform(image)
+                t_label = torch.tensor(label)
+                return t_image, t_label
+            else:
+                return image, label
         # if self.model_backbone == 'mnv3':
 
 

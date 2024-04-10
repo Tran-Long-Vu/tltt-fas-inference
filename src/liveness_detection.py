@@ -1,7 +1,4 @@
-from libs import *
-import os
-from PIL import Image
-import numpy as np
+from libs.libs import *
 from configs.config import *
 
 class LivenessDetection():

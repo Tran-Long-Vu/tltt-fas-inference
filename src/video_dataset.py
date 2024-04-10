@@ -1,6 +1,6 @@
 # import
-from libs import *
-from PIL import Image# Class init
+from libs.libs import *
+
 class VideoDataset(torch.utils.data.Dataset):
     # Init
     def __init__(self, path_to_video_dir, ) -> None: 
