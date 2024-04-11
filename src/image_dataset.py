@@ -99,7 +99,7 @@ class ImageDataset(torch.utils.data.Dataset):
             label = self.get_label(image_path)
             t_label = torch.tensor(label)
             t_image = self.transform(cropped_image)
-            return t_image, t_label        
+            return t_image, t_label   
         
         elif self.augment == 'val':
             image_path = self.all_image_paths[index]
@@ -114,16 +114,10 @@ class ImageDataset(torch.utils.data.Dataset):
 
         elif self.augment == 'test':
             image_path = self.all_image_paths[index] # all image paths
-            
             image = cv2.imread(image_path)
-            image = np.array(image)
+            image = np.array(image).astype(np.float32)
             label = self.get_label(image_path)
-            if INFERENCE_DEVICE == "CUDA":
-                t_image = self.transform(image)
-                t_label = torch.tensor(label)
-                return t_image, t_label
-            else:
-                return image, label
+            return image, label
         # if self.model_backbone == 'mnv3':
 
 

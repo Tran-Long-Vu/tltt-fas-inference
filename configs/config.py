@@ -1,3 +1,4 @@
+#train h-params
 BATCH_SIZE = 32
 LOSS = ""
 LEARNING_RATE = 0.001
@@ -5,12 +6,14 @@ NO_EPOCHS = 2
 DROPOUT = False
 OPTIMIZER = "adam"
 
+# inference
+FAS_FORMAT = 'onnx'
 
-MODEL_BACKBONE= "rn18"
+FAS_BACKBONE= "rn18"
 MODEL_NAME = 'rn18fas'
 ATTACK_TYPE = 'printing'
 
-INFERENCE_DEVICE = 'CPU'
+INFERENCE_DEVICE = 'CUDA'
 
 TRAINING_DEVICE = 'CUDA'
 

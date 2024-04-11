@@ -21,7 +21,7 @@ class Checker():
     def check_data(self):
         dataset = ImageDataset(TEST_DATASET,
                     PATH_TO_PRINTING_TEST_DATASET,
-                    MODEL_BACKBONE,
+                    FAS_BACKBONE,
                     augment = 'test',
                     split = 'test')
         return dataset
@@ -50,29 +50,20 @@ if __name__ == "__main__":
     checker.check_cuda()
     
     dataset = checker.check_data()
+    
+    
+    
     # get single sample: 
     image, label = dataset[0]
-    # cuda
-    if INFERENCE_DEVICE == "CUDA":
-        image = image.cuda()
-        label = label.cuda()
-        print(image.shape)
-        print(label.shape)
+    image2, label2 = dataset[202]
+    # label = label.cuda()
+    # print(image.shape)
+    # print("    label : " +  str(label))
+    image_batch = [image,image2] # single inference
+    label_batch = [label,label2]
     
-    print("    image loading done")
-    
-    
-    fd = FaceDetector()    
-    # if CUDA: 
-    fd.model.session.set_providers(['CUDAExecutionProvider']) # set provider for SCRFD
+    #  load fd model 
+    fd = FaceDetector()
+    face_batch, cropped_label_batch = fd.run_one_batch(image_batch, label_batch)
 
-    # test face detector first. input: nparray or tensor image. Output: array of np array : [[face1],[face2]] or array of tensor: [[tensor1, tensor2]]
-   
-    
-    faces = fd.detect_one_face(image) # use when cpu.
-    print(faces) # nparray
-    # todo: inference within GPU debugging:
-    
-    # output = fas.detect_one_face(face)
-    # print(output)
-    # print(label)
+    # load fas model

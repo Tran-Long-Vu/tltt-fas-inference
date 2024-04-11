@@ -5,6 +5,7 @@
 # @Function      : 
 
 from __future__ import division
+from configs.config import *
 import datetime
 import numpy as np
 # import onnx
@@ -13,6 +14,8 @@ import os
 import os.path as osp
 import cv2
 import sys
+
+
 
 def softmax(z):
     assert len(z.shape) == 2
@@ -124,6 +127,8 @@ class SCRFD:
     def prepare(self, ctx_id, **kwargs):
         if ctx_id<0:
             self.session.set_providers(['CPUExecutionProvider'])
+        else: 
+            self.session.set_providers(['CUDAExecutionProvider'])
         nms_thresh = kwargs.get('nms_thresh', None)
         if nms_thresh is not None:
             self.nms_thresh = nms_thresh
