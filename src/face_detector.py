@@ -129,7 +129,7 @@ class FaceDetector():
         Output: face_batch
         a nparray batch of resized face, ready for FAS: [[face1][face2][face3],...]
         '''
-        # TODO: array of faces found in one image. for real time inference
+
         if len(cropped_batch) == 0: # check null
             pass
         face_batch = []
@@ -143,34 +143,13 @@ class FaceDetector():
             face_batch.append(face)
         return face_batch
 
-    # todo: (later) inference on single frame of video
+    # todo: (later) inference realtime on single frame of video
     def live_detect_video(self, frame):
         '''  comment*
         
         
         '''
-        # todo: need to gather multiple bboxes.
-        bboxes = self.face_detect_image_dir(frame)
-        if type(bboxes) is  int:
-            pass
-        elif len(bboxes) > 0:
-            bbox = bboxes[0]
-            x_min = int(bbox[0])
-            x_max = int(bbox[2])
-            y_min = int(bbox[1])
-            y_max = int(bbox[3])
-            
-            width = x_max - x_min
-            height = y_max - y_min
-            
-            face = frame[y_min:y_max, x_min:x_max]
-            face = np.expand_dims(face,0)
-            if self.fas_model_backbone == "mnv3":
-                face = np.resize(face, (1,3,128,128))
-            elif self.fas_model_backbone == "rn18":
-                face = np.resize(face, (1,3,256,256))
-            face = np.array(face).astype(np.float32)
-            return face, width, height
+        
 
     # inference on batch image             
     def run_one_batch(self, image_batch, label_batch):
